@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Navbar.styles.scss';
 import LogoHeader from '../../assets/img/logo-header.png';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const sectionHeroEl = useRef(null);
@@ -36,9 +37,9 @@ function NavBar() {
 
   return (
     <header className="header">
-      <a href="#">
+      <Link to={'/'}>
         <img className="logo" src={LogoHeader} alt="Hive logo" />
-      </a>
+      </Link>
 
       <nav className="main-nav">
         <ul className="main-nav-list">
