@@ -75,6 +75,7 @@ Medium: 11px
   outline: none;
   text-decoration: none;
   font-family: 'Roboto Mono', monospace;
+  background-color: var(--background);
 }
 
 html {
@@ -86,7 +87,6 @@ html {
 body {
   line-height: 1;
   font-weight: 400;
-  background-color: var(--background);
 }
 
 /* ////////////////////////// */
