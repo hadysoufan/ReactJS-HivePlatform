@@ -38,6 +38,7 @@ $header-height: 9.6rem;
     height: 35rem;
     margin-top: 7rem;
     padding-bottom: 1.4rem;
+    cursor: pointer;
   }
 }
 
@@ -45,90 +46,90 @@ $header-height: 9.6rem;
 /* Nav Section */
 
 .main-nav {
-	width: auto;
-	margin: 0 auto;
+  width: auto;
+  margin: 0 auto;
 }
 .main-nav-list {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 4rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
 }
 .main-nav-link {
-	&:link {
-		display: inline-block;
-		text-decoration: none;
-		color: var(--button);
-		font-size: 1.8rem;
-		transition: all 0.4s;
-	}
-	&:visited {
-		display: inline-block;
-		text-decoration: none;
-		color: var(--button);
-		font-size: 1.8rem;
-		transition: all 0.4s;
-	}
-	&:hover {
-		color: var(--active);
-	}
-	&:active {
-		color: var(--active);
-	}
+  &:link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--button);
+    font-size: 1.8rem;
+    transition: all 0.4s;
+  }
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--button);
+    font-size: 1.8rem;
+    transition: all 0.4s;
+  }
+  &:hover {
+    color: var(--active);
+  }
+  &:active {
+    color: var(--active);
+  }
 }
 .home-btn {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 .main-nav-line {
-	width: 1px;
-	height: 2rem;
-	background-color: var(--button);
-	margin: 0 2rem;
+  width: 1px;
+  height: 2rem;
+  background-color: var(--button);
+  margin: 0 2rem;
 }
 .btn-login {
-	font-family: inherit;
-	font-size: 1.7rem;
-	background: transparent;
-	border: none;
-	padding: 1em 1.5em;
-	color: var(--button);
-	text-transform: uppercase;
-	position: relative;
-	transition: 0.5s ease;
-	a {
-		color: var(--button);
-	}
-	&::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		height: 0.2rem;
-		width: 0;
-		background-color: var(--button);
-		transition: 0.5s ease;
-	}
-	&:hover {
-		color: #0f0e17;
-		transition-delay: 0.5s;
-		&::before {
-			width: 100%;
-		}
-		&::after {
-			height: 100%;
-			transition-delay: 0.4s;
-		}
-	}
-	&::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		height: 0;
-		width: 100%;
-		background-color: var(--button);
-		transition: 0.4s ease;
-		z-index: -1;
-	}
+  font-family: inherit;
+  font-size: 1.7rem;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: var(--button);
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  a {
+    color: var(--button);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.2rem;
+    width: 0;
+    background-color: var(--button);
+    transition: 0.5s ease;
+  }
+  &:hover {
+    color: #0f0e17;
+    transition-delay: 0.5s;
+    &::before {
+      width: 100%;
+    }
+    &::after {
+      height: 100%;
+      transition-delay: 0.4s;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--button);
+    transition: 0.4s ease;
+    z-index: -1;
+  }
 }

@@ -40,6 +40,17 @@ function HomeScreen() {
   }, [checkScrollTop]);
 
   // //////////////////////////////////////////
+  // Scroll down functionality
+  const handleButtonClick = () => {
+    const featureSection = document.getElementById('feature');
+    if (featureSection) {
+      featureSection.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  // //////////////////////////////////////////
   // Testimonials functionality
 
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -124,8 +135,8 @@ function HomeScreen() {
 
               <div className="hero-img-box">
                 <img className="hero-img" src={img.HeroImg} alt="social img" />
-                <button className="scroll-down-btn">
-                  <div className="scroll"> </div>
+                <button className="scroll-down-btn" onClick={handleButtonClick}>
+                  <div className="scroll"></div>
                 </button>
               </div>
             </div>

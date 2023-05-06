@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.styles.scss';
 
 function Footer() {
@@ -15,71 +16,73 @@ function Footer() {
               using Hive.
             </p>
             <div className="social">
-              <a
-                href="https://www.linkedin.com/in/hadi-soufan-b6011919a/"
+              <Link
+                to={'https://www.linkedin.com/in/hadi-soufan-b6011919a/'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-linkedin"></i>
-              </a>
-              <a
-                href="https://medium.com/@hadisoufan"
+              </Link>
+              <Link
+                to={'https://medium.com/@hadisoufan'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-medium"></i>
-              </a>
-              <a
-                href="https://stackoverflow.com/users/20323360/hadi-soufan"
+              </Link>
+              <Link
+                to={'https://stackoverflow.com/users/20323360/hadi-soufan'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-stack-overflow"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/hadi.a.soufan/"
+              </Link>
+              <Link
+                to={'https://www.instagram.com/hadi.a.soufan/'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://twitter.com/hadis0ufan"
+              </Link>
+              <Link
+                to={'https://twitter.com/hadis0ufan'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="https://www.hackerrank.com/hady_A_soufan"
+              </Link>
+              <Link
+                to={'https://www.hackerrank.com/hady_A_soufan'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-hackerrank"></i>
-              </a>
-              <a
-                href="https://api.whatsapp.com/send?phone=+96176740521"
+              </Link>
+              <Link
+                to={'https://api.whatsapp.com/send?phone=+96176740521'}
                 target="_blank"
                 rel="noreferrer">
                 <i className="fab fa-whatsapp"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="column links">
             <h3>About US</h3>
             <ul>
               <li>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=33.8938,35.5018"
+                <Link
+                  to={
+                    'https://www.google.com/maps/search/?api=1&query=33.8938,35.5018'
+                  }
                   target="_blank"
                   rel="noreferrer">
                   <i className="fas fa-map-marker-alt"></i> Beirut, Beirut
                   Governorate, Lebanon
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="mailto:hady.a.soufan@gmail.com">
+                <Link to={'mailto:hady.a.soufan@gmail.com'}>
                   <i className="fas fa-envelope"></i> Hive Platform
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="tel:+96176740521">
+                <Link to={'tel:+96176740521'}>
                   <i className="fas fa-phone"></i> +96176740521
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,16 +90,16 @@ function Footer() {
             <h3>Resources</h3>
             <ul>
               <li>
-                <a href="#faq">F.A.Q</a>
+                <Link>F.A.Q</Link>
               </li>
               <li>
-                <a href="#cookies-policy">Cookies Policy</a>
+                <Link>Cookies Policy</Link>
               </li>
               <li>
-                <a href="#terms-of-services">Terms Of Service</a>
+                <Link>Terms Of Service</Link>
               </li>
               <li>
-                <a href="#support">Support</a>
+                <Link>Support</Link>
               </li>
             </ul>
           </div>
