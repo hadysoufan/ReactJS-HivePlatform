@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as img from '../../assets/js/images';
 import NavBar from '../../components/NavBar/Navbar.component';
 import Footer from '../../components/Footer/Footer.component';
-import {testimonials} from '../../testimonials';
+import { testimonials } from '../../testimonials';
 import './HomeScreen.styles.scss';
 
 function HomeScreen() {
@@ -18,7 +18,6 @@ function HomeScreen() {
   }, []);
 
   // //////////////////////////////////////////
-
   // Scroll up functionality functionality
   const [showScroll, setShowScroll] = useState(false);
 
@@ -41,7 +40,6 @@ function HomeScreen() {
   }, [checkScrollTop]);
 
   // //////////////////////////////////////////
-
   // Testimonials functionality
 
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -54,7 +52,7 @@ function HomeScreen() {
     }, 10000);
 
     return () => clearInterval(intervalId);
-  }, [testimonials.length]);
+  }, []);
 
   const currentTestimonial = testimonials[currentTestimonialIndex];
 
@@ -62,7 +60,7 @@ function HomeScreen() {
     <>
       {/* Loader */}
       {isLoading ? (
-        <div class="honeycomb">
+        <div className="honeycomb">
           <div></div>
           <div></div>
           <div></div>
@@ -134,7 +132,7 @@ function HomeScreen() {
           </section>
 
           {/* Feature Section */}
-          <section className="section-featured section" id="feature">
+          <section className="section-featured" id="feature">
             <div className="container">
               <h2 className="heading-featured-in">As featured in</h2>
               <div className="logos">
@@ -149,7 +147,7 @@ function HomeScreen() {
 
           {/* Why us section */}
 
-          <section className="section-why section" id="why">
+          <section className="section-why" id="why">
             <div className="container center-text">
               <h2 className="heading-secondary">Why Choose Us?</h2>
               <h2 className="subheading margin--bottom-md">
@@ -203,7 +201,7 @@ function HomeScreen() {
 
           {/* About us section */}
 
-          <section className="section-about section" id="about">
+          <section className="section-about" id="about">
             <div className="container grid grid--2-cols grid--center-v">
               <div className="step-text-box">
                 <h3 className="heading-tertiary">About US</h3>
@@ -323,7 +321,7 @@ function HomeScreen() {
           </section>
 
           {/* Testimonals section */}
-          <section className="section-3 center section" id="testimonial">
+          <section className="section-3 center" id="testimonial">
             <h2 className="heading-secondary test-heading">Testimonials</h2>
             <h2 className="subheading margin--bottom-md">
               Hive has made staying connected with loved ones a seamless and
