@@ -1,47 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import './Navbar.styles.scss';
+import React from 'react';
 import LogoHeader from '../../assets/img/logo-header.png';
 import { Link } from 'react-router-dom';
+import * as Nav from './navbar.styled';
 
 function NavBar() {
-  const sectionHeroEl = useRef(null);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      function (entries) {
-        const ent = entries[0];
-        console.log(ent);
-
-        if (ent.isIntersecting === false) {
-          document.body.classList.add('sticky');
-        }
-
-        if (ent.isIntersecting === true) {
-          document.body.classList.remove('sticky');
-        }
-      },
-      {
-        // In the viewport
-        root: null,
-        threshold: 0,
-        rootMargin: '-80px',
-      }
-    );
-
-    obs.observe(sectionHeroEl.current);
-
-    // cleanup
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => obs.unobserve(sectionHeroEl.current);
-  }, []);
-
   return (
-    <header className="header">
+    <Nav.Header>
       <Link to={'/'}>
         <img className="logo" src={LogoHeader} alt="Hive logo" />
       </Link>
 
-      <nav className="main-nav">
+      <Nav.MainNav>
         <ul className="main-nav-list">
           <li>
             <a href="#home" className="main-nav-link home-btn">
@@ -79,9 +48,8 @@ function NavBar() {
             </li>
           </>
         </ul>
-      </nav>
-      <div ref={sectionHeroEl}></div>
-    </header>
+      </Nav.MainNav>
+    </Nav.Header>
   );
 }
 
