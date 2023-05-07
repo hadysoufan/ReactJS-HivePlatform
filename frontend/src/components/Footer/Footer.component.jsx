@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.styles.scss';
+import { HomeFooter } from './Footer.Styled';
+
 
 function Footer() {
   return (
     <>
-      <footer>
+      <HomeFooter>
         <div className="row primary section">
           <div className="column about">
             <h3>Unite on Hive, Connect Now!</h3>
@@ -122,7 +123,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      </footer>
+      </HomeFooter>
     </>
   );
 }
