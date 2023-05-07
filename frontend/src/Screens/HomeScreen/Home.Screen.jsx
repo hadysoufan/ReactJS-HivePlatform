@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+
 import * as img from '../../assets/js/images';
+import { testimonials } from '../../testimonials';
+
+import IndexGlobal from '../../components/styled/IndexGlobal.styled';
+import * as Home from './HomeScreen.styled';
+import * as Gene from '../../components/styled/Generals.styled';
+
 import NavBar from '../../components/NavBar/Navbar.component';
 import Footer from '../../components/Footer/Footer.component';
-import { testimonials } from '../../testimonials';
-import './HomeScreen.styles.scss';
 
 function HomeScreen() {
   // Loader functionality
@@ -69,9 +74,10 @@ function HomeScreen() {
 
   return (
     <>
+      <IndexGlobal />
       {/* Loader */}
       {isLoading ? (
-        <div className="honeycomb">
+        <Home.Loader>
           <div></div>
           <div></div>
           <div></div>
@@ -79,24 +85,22 @@ function HomeScreen() {
           <div></div>
           <div></div>
           <div></div>
-        </div>
+        </Home.Loader>
       ) : (
         <main>
           {/* scroll up btn */}
-          <button className="scroll-up-btn" onClick={scrollTop}>
-            ↑
-          </button>
+          <Home.ScrollUp onClick={scrollTop}>↑</Home.ScrollUp>
 
           <NavBar />
           {/* Hero Section */}
-          <section className="section-hero" id="home">
+          <Home.Hero id="home">
             <div className="hero">
               <div className="hero-text-box">
                 <p className="hero-sub">Join the Hive, Connect Now</p>
-                <h1 className="heading-primary">
+                <Gene.HeadingPrimary>
                   Discover the <span>Revolutionary</span> New Social Media App -
                   Hive!
-                </h1>
+                </Gene.HeadingPrimary>
                 <p className="hero-description">
                   A brand-new social media platform called Hive combines the
                   best elements of all the most popular social media sites.
@@ -124,10 +128,10 @@ function HomeScreen() {
                     className="rating-stars"
                     alt="rating stars icons"
                   />
-                  <p className="subheading">
+                  <Gene.SubHeading>
                     "No matter where they are in the world, you can keep in
                     touch with the people you care about using Hive."
-                  </p>
+                  </Gene.SubHeading>
                   <p className="user-name">Hadi Soufan</p>
                   <span className="user-job">Web Developer</span>
                 </div>
@@ -135,15 +139,17 @@ function HomeScreen() {
 
               <div className="hero-img-box">
                 <img className="hero-img" src={img.HeroImg} alt="social img" />
-                <button className="scroll-down-btn" onClick={handleButtonClick}>
+                <Home.ScrollDown
+                  className="scroll-down-btn"
+                  onClick={handleButtonClick}>
                   <div className="scroll"></div>
-                </button>
+                </Home.ScrollDown>
               </div>
             </div>
-          </section>
+          </Home.Hero>
 
           {/* Feature Section */}
-          <section className="section-featured" id="feature">
+          <Home.Feature id="feature">
             <div className="container">
               <h2 className="heading-featured-in">As featured in</h2>
               <div className="logos">
@@ -154,18 +160,18 @@ function HomeScreen() {
                 <img src={img.USAToday} alt="USA Today logo" />
               </div>
             </div>
-          </section>
+          </Home.Feature>
 
           {/* Why us section */}
 
-          <section className="section-why" id="why">
+          <Home.Why id="why">
             <div className="container center-text">
-              <h2 className="heading-secondary">Why Choose Us?</h2>
-              <h2 className="subheading margin--bottom-md">
+              <Gene.HeadingSecondary>Why Choose Us?</Gene.HeadingSecondary>
+              <Gene.SubHeading className="margin--bottom-md">
                 Hive is an all-in-one social media platform that offers a
                 convenient and secure way to stay connected with friends and
                 family globally.
-              </h2>
+              </Gene.SubHeading>
             </div>
             <div className="container grid grid--3-cols">
               <div className="card">
@@ -208,14 +214,14 @@ function HomeScreen() {
                 </p>
               </div>
             </div>
-          </section>
+          </Home.Why>
 
           {/* About us section */}
 
-          <section className="section-about" id="about">
+          <Home.About id="about">
             <div className="container grid grid--2-cols grid--center-v">
               <div className="step-text-box">
-                <h3 className="heading-tertiary">About US</h3>
+                <Gene.HeadingTeritary>About US</Gene.HeadingTeritary>
 
                 {/* 1 */}
                 <p className="step-description">
@@ -261,7 +267,9 @@ function HomeScreen() {
               </div>
 
               <div className="step-text-box">
-                <h3 className="heading-tertiary">Social media features</h3>
+                <Gene.HeadingTeritary>
+                  Social media features
+                </Gene.HeadingTeritary>
                 <p className="step-description">
                   Hive combines the best features of the most widely used social
                   media platforms. You can post, like, and share stories, as
@@ -292,7 +300,9 @@ function HomeScreen() {
 
               {/* 3 */}
               <div className="step-text-box">
-                <h3 className="heading-tertiary">Privacy and security</h3>
+                <Gene.HeadingTeritary>
+                  Privacy and security
+                </Gene.HeadingTeritary>
                 <p className="step-description">
                   The creators of Hive designed the platform with privacy and
                   security in mind. You can be confident that your data is
@@ -329,15 +339,17 @@ function HomeScreen() {
                 />
               </div>
             </div>
-          </section>
+          </Home.About>
 
           {/* Testimonals section */}
-          <section className="section-3 center" id="testimonial">
-            <h2 className="heading-secondary test-heading">Testimonials</h2>
-            <h2 className="subheading margin--bottom-md">
+          <Home.Testimonials className="section-3 center" id="testimonial">
+            <Gene.HeadingSecondary className="test-heading">
+              Testimonials
+            </Gene.HeadingSecondary>
+            <Gene.SubHeading className="margin--bottom-md">
               Hive has made staying connected with loved ones a seamless and
               secure experience.
-            </h2>
+            </Gene.SubHeading>
             <div className="testimonial-container">
               <div className="progress-bar"></div>
               <div className="fas fa-quote-right fa-quote"></div>
@@ -355,7 +367,7 @@ function HomeScreen() {
                 </div>
               </div>
             </div>
-          </section>
+          </Home.Testimonials>
           <Footer />
         </main>
       )}
