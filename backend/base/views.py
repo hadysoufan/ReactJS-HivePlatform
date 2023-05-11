@@ -2,7 +2,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .users import users
 
-
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
