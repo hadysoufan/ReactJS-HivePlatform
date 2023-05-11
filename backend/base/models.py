@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    image = models.ImageField(upload_to='post-image/', blank=True, null=True)
+    image = models.ImageField(blank=True, null=True)
     description = models.CharField(max_length=200, null=True, blank=True)
     participants = models.ManyToManyField(
         User, related_name='participants', blank=True)
