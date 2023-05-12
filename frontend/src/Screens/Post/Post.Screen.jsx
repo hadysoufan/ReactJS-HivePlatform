@@ -1,7 +1,7 @@
 import React from 'react';
-import Feed1 from '../../assets/img/feed-1.jpg';
-import { PostContainer } from './Post.styled';
 import { Link } from 'react-router-dom';
+import { PostContainer } from './Post.styled';
+import Feed1 from '../../assets/img/feed-1.jpg';
 
 function PostScreen() {
   return (
@@ -9,7 +9,7 @@ function PostScreen() {
       <PostContainer>
         <div className="post-feed">
           <h3>
-            <Link to='/user-profile'>@Cleopatra</Link>
+            <Link to="/user-profile">@Cleopatra</Link>
           </h3>
           <img className="post-image" src={Feed1} alt="" />
 
