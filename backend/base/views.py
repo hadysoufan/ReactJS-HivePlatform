@@ -1,23 +1,21 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .users import users
+
+from .feeds import feeds
+from .models import Post
+from .serializers import PostSerializer
+
 
 @api_view(['GET'])
-def getRoutes(request):
-    routes = [
-        '/api/products',
-        'api/products/create',
-    ]
-    return Response(routes)
+def getFeeds(request):
+    feeds = Post.objects.all()
+    serializer = PostSerializer(feeds, many=True)
+    return Response(serializer.data)
 
 @api_view(['GET'])
-def getUsers(request):
-    return Response(users)
-
-@api_view(['GET'])
-def getUser(request, pk):
-    for i in users:
+def getFeed(request, pk):
+    for i in feeds:
         if i['_id'] == pk:
-          user = i
+          feed = i
           break
-    return Response(user)
+    return Response(feed)
