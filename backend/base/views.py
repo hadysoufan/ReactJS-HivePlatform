@@ -1,7 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .feeds import feeds
 from .models import Post
 from .serializers import PostSerializer
 
@@ -14,8 +13,6 @@ def getFeeds(request):
 
 @api_view(['GET'])
 def getFeed(request, pk):
-    for i in feeds:
-        if i['_id'] == pk:
-          feed = i
-          break
-    return Response(feed)
+    feed = Post.objects.get(_id=pk)
+    serializer = PostSerializer(feed,many=False)
+    return Response(serializer.data)
