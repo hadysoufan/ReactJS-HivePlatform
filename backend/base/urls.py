@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.getRoutes, name='routes'),
-    path('users/', views.getUsers, name='users'),
-    path('users/<str:pk>', views.getUser, name='user'),
+    path('feeds/', views.getFeeds, name='feeds'),
+    path('feeds/<str:pk>', views.getFeed, name='feed'),
 ]
