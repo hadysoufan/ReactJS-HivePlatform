@@ -1,7 +1,7 @@
 import React from 'react';
-import HiveGlobal from '../styled/HiveGlobal.styled';
 import Profile1 from '../../assets/img/profile-1.jpg';
 import { HiveNav } from './HiveBar.styled';
+import { Link } from 'react-router-dom';
 
 function HiveBar() {
   return (
@@ -15,12 +15,17 @@ function HiveBar() {
               <input type="search" placeholder="search here" />
             </div>
             <div className="create">
-              <label className="btn btn-primary" htmlFor="create-post">
+              <Link
+                to="/create-post"
+                className="btn btn-primary"
+                htmlFor="create-post">
                 Create
-              </label>
-              <div className="profile-picture">
-                <img src={Profile1} alt="" />
-              </div>
+              </Link>
+              <Link to="/hive/user-profile">
+                <div className="profile-picture">
+                  <img src={Profile1} alt="" />
+                </div>
+              </Link>
             </div>
           </div>
         </nav>
