@@ -2,15 +2,14 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 
-from .models import Post, User
-from .serializers import PostSerializer, UserSerializer, UserSerializerWithToken
+from base.models import User
+from base.serializers import  UserSerializer, UserSerializerWithToken
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
-
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
@@ -25,7 +24,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         
     
 class MyTokenObtainPairView(TokenObtainPairView):
-    serializer_class = MyTokenObtainPairSerializer    
+    serializer_class = MyTokenObtainPairSerializer 
 
 @api_view(['POST'])
 def registerUser(request):
@@ -57,16 +56,4 @@ def getUserProfile(request):
 def getUsers(request):
     users = User.objects.all()
     serializer = UserSerializer(users, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
-def getFeeds(request):
-    feeds = Post.objects.all()
-    serializer = PostSerializer(feeds, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
-def getFeed(request, pk):
-    feed = Post.objects.get(_id=pk)
-    serializer = PostSerializer(feed,many=False)
     return Response(serializer.data)
